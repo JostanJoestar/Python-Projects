@@ -10,5 +10,6 @@ class Aufgabe:
         status = "✔️" if self.erledigt else "❌"
         return f"{self.titel} | {self.datum} | {self.beschreibung} | {status}"
 
+    #Aufgabe erledigen
     def erledigen(self):
         self.erledigt = True

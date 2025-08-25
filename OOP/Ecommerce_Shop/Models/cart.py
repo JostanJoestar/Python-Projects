@@ -1,17 +1,19 @@
 class Cart:
     def __init__(self):
         self.items = {}
-
+    #Item hinzufügen
     def add_item(self, product, quantity: int):
         if product in self.items:
             self.items[product] += quantity
         else:
             self.items[product] = quantity
     
+    #Item entfernen
     def remove_item(self, product):
         if product in self.items:
             del self.items[product]
-        
+    
+    #Gesamtpreis berechnen
     def total_price(self):
         return sum(p.price * q for p, q in self.items.items())
     
