@@ -5,6 +5,7 @@ class Customer:
         self.email = email
         self.orders = []
 
+    #Bestellung hinzufügen
     def add_order(self, order):
         self.orders.append(order)
 

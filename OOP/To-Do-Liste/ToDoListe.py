@@ -8,6 +8,7 @@ class ToDoListe:
         self.aufgaben = []
         self.laden()
     
+    #Aufgaben laden
     def laden(self):
         try:
             with open(self.datei, newline="", encoding="utf-8") as csvfile:
@@ -18,20 +19,24 @@ class ToDoListe:
         except FileNotFoundError:
             pass
 
+    #Aufgabe speichern
     def speichern(self):
         with open(self.datei, "w", newline="", encoding="utf-8") as csvfile:
             writer = csv.writer(csvfile)
             for i in self.aufgaben:
                 writer.writerow([i.titel, i.datum, i.beschreibung])
 
+    #Aufgabe hinzufügen
     def hinzufuegen(self, aufgabe):
         self.aufgaben.append(aufgabe)
         self.speichern()
     
+    #Aufgabe löschen
     def loeschen(self, titel):
         self.aufgaben = [i for i in self.aufgaben if i.titel != titel]
         self.speichern()
 
+    #Aufgaben anzeigen
     def anzeigen(self):
         if not self.aufgaben:
             print("Keine Aufgaben vorhanden")

@@ -5,6 +5,7 @@ class Product:
         self.price = price
         self.stock = stock
 
+    #Bestand reduzieren
     def reduce_stock(self, quantity: int):
         if quantity <= self.stock:
             self.stock -= quantity
