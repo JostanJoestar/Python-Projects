@@ -13,7 +13,7 @@ try:
         departureDate='2025-09-11',     # Datum YYYY-MM-DD
         adults=1,                       # Anzahl Reisende
         max=10,                         # maximale Anzahl Ergebnisse
-        nonStop='true'                     # nur Direktflüge
+        nonStop='true'                  # nur Direktflüge
     )
 
     flights = response.data
